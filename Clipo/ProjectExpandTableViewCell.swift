@@ -10,10 +10,15 @@ import UIKit
 
 class ProjectExpandTableViewCell: UITableViewCell {
     var crewMember: CrewMember? { didSet { if let cm = crewMember { configureForCrewMember(cm) } } }
+    
     @IBOutlet weak var projectImageView: UIImageView!
+    
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var toolbarStackView: UIStackView!
+    
+    
     @IBOutlet weak var toolbarStackViewHeightConstraint: NSLayoutConstraint!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

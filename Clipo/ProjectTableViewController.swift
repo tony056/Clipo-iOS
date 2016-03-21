@@ -25,6 +25,8 @@ class ProjectTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         crewMembers = [
             CrewMember(name: "Ezra Bridger", imageName: "ezra"),
             CrewMember(name: "Kanan Jarrus", imageName: "kanan"),
@@ -63,6 +65,35 @@ class ProjectTableViewController: UITableViewController {
         cell.crewMember = crewMembers[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        var indexPathToReturn: NSIndexPath?
+        var crewMember = crewMembers[indexPath.row]
+        
+        if crewMember.expanded {
+            crewMember.expanded = false
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.tableView(tableView, didDeselectRowAtIndexPath: indexPath)
+        } else {
+            crewMember.expanded = true
+            indexPathToReturn = indexPath
+        }
+        
+        crewMembers[indexPath.row] = crewMember
+        
+        return indexPathToReturn
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 
     /*
