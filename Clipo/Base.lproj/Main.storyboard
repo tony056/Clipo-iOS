@@ -185,6 +185,7 @@
                     <connections>
                         <segue destination="DUB-xW-hLt" kind="relationship" relationship="viewControllers" id="NCm-6b-mVP"/>
                         <segue destination="QsL-pb-zNf" kind="relationship" relationship="viewControllers" id="FSJ-ro-WMV"/>
+                        <segue destination="hL3-70-vLD" kind="relationship" relationship="viewControllers" id="G69-eB-fci"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lQ-Di-5O9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,6 +229,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UR-ma-9Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1931" y="615"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="YVd-re-RSO">
+            <objects>
+                <viewController id="hL3-70-vLD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hNQ-4O-hap"/>
+                        <viewControllerLayoutGuide type="bottom" id="vfR-7e-B8P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WWn-i5-SpL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="k9I-RZ-3Tx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPw-KZ-eQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="1329"/>
         </scene>
     </scenes>
 </document>
