@@ -19,6 +19,7 @@
 		E7AA46A01C9FB3F500FDF00E /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA469F1C9FB3F500FDF00E /* NotificationTableViewController.swift */; };
 		E7AA46A21C9FED3600FDF00E /* ProjectExpandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA46A11C9FED3600FDF00E /* ProjectExpandTableViewCell.swift */; };
 		E7AA46A41C9FFADC00FDF00E /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA46A31C9FFADC00FDF00E /* ProjectTableViewController.swift */; };
+		E7F83C9A1CA0FC4E0089CCD8 /* FileBrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F83C991CA0FC4E0089CCD8 /* FileBrowseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E7AA469F1C9FB3F500FDF00E /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		E7AA46A11C9FED3600FDF00E /* ProjectExpandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectExpandTableViewCell.swift; sourceTree = "<group>"; };
 		E7AA46A31C9FFADC00FDF00E /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
+		E7F83C991CA0FC4E0089CCD8 /* FileBrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBrowseViewController.swift; sourceTree = "<group>"; };
 		EA160C6F43DC082EE8016D7C /* Pods-Clipo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clipo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clipo/Pods-Clipo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				E7AA469F1C9FB3F500FDF00E /* NotificationTableViewController.swift */,
 				E7AA46A11C9FED3600FDF00E /* ProjectExpandTableViewCell.swift */,
 				E7AA46A31C9FFADC00FDF00E /* ProjectTableViewController.swift */,
+				E7F83C991CA0FC4E0089CCD8 /* FileBrowseViewController.swift */,
 			);
 			path = Clipo;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				E7AA46A21C9FED3600FDF00E /* ProjectExpandTableViewCell.swift in Sources */,
 				E7AA46A01C9FB3F500FDF00E /* NotificationTableViewController.swift in Sources */,
+				E7F83C9A1CA0FC4E0089CCD8 /* FileBrowseViewController.swift in Sources */,
 				E7702A731C9D1EAB00F7C821 /* ViewController.swift in Sources */,
 				E758E8FC1C9D9B0000BDC900 /* MeteorClientManager.swift in Sources */,
 				E7AA469A1C9FAE3600FDF00E /* NotificationPageViewController.swift in Sources */,
@@ -350,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Clipo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ntu.Clipo;
@@ -365,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Clipo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ntu.Clipo;

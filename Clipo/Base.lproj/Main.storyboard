@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eEf-fM-edP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ua-wH-uDJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -70,6 +70,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--File Browse View Controller-->
+        <scene sceneID="eCu-6Y-4ee">
+            <objects>
+                <viewController id="8ua-wH-uDJ" customClass="FileBrowseViewController" customModule="Clipo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cw2-mL-LQA"/>
+                        <viewControllerLayoutGuide type="bottom" id="9aL-Ck-djZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OSC-nI-PbA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wE-0R-hnU">
+                                <rect key="frame" x="0.0" y="22" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8wE-0R-hnU" firstAttribute="leading" secondItem="OSC-nI-PbA" secondAttribute="leading" id="3a4-5P-kMW"/>
+                            <constraint firstAttribute="trailing" secondItem="8wE-0R-hnU" secondAttribute="trailing" id="52L-ER-U5j"/>
+                            <constraint firstItem="8wE-0R-hnU" firstAttribute="top" secondItem="cw2-mL-LQA" secondAttribute="bottom" id="Gqa-IS-bTY"/>
+                            <constraint firstItem="9aL-Ck-djZ" firstAttribute="top" secondItem="8wE-0R-hnU" secondAttribute="bottom" id="Z1A-d7-SLH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fileBrowser" destination="8wE-0R-hnU" id="LvD-pB-ppe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWu-AA-Dv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3497" y="-572"/>
         </scene>
         <!--Notification Page View Controller-->
         <scene sceneID="uZV-Lb-Bkz">
