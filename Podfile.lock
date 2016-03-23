@@ -29,12 +29,14 @@ PODS:
   - ObjectiveDDP (0.2.0):
     - M13OrderedDictionary
     - SocketRocket (= 0.4.1)
+  - RATreeView (2.1.0)
   - SocketRocket (0.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - Google/SignIn
   - ObjectiveDDP (from `git@github.com:boundsj/ObjectiveDDP.git`, branch `master`)
+  - RATreeView (~> 2.1.0)
 
 EXTERNAL SOURCES:
   ObjectiveDDP:
@@ -58,6 +60,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
   M13OrderedDictionary: 6e157fe9c82aa6b3cd7198f5c5c30c7a6834c4a6
   ObjectiveDDP: c2225f6896d671977b7046afc0530967cd141f90
+  RATreeView: fc82ec26b8be18cfa0f5f99a5abbe6be68edb21f
   SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
 
 COCOAPODS: 0.39.0
