@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B6E6895737C7FC52F64C29E1 /* Pods_Clipo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9FFD5413F57F6EC2D94D9A /* Pods_Clipo.framework */; };
+		E7313ABF1CA28B100075A35C /* TopicTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7313ABE1CA28B100075A35C /* TopicTableSectionHeader.swift */; };
+		E7313AC11CA28B5F0075A35C /* TopicSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7313AC01CA28B5F0075A35C /* TopicSectionHeaderView.xib */; };
+		E7313AC31CA28D650075A35C /* TopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7313AC21CA28D650075A35C /* TopicTableViewController.swift */; };
 		E758E8FC1C9D9B0000BDC900 /* MeteorClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E8FB1C9D9B0000BDC900 /* MeteorClientManager.swift */; };
 		E758E9031C9E781D00BDC900 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E758E9021C9E781D00BDC900 /* GoogleService-Info.plist */; };
 		E7702A711C9D1EAB00F7C821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7702A701C9D1EAB00F7C821 /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		8D9FFD5413F57F6EC2D94D9A /* Pods_Clipo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clipo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F5B0BB5B37BD84BC270E804 /* Pods-Clipo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clipo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clipo/Pods-Clipo.release.xcconfig"; sourceTree = "<group>"; };
+		E7313ABE1CA28B100075A35C /* TopicTableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableSectionHeader.swift; sourceTree = "<group>"; };
+		E7313AC01CA28B5F0075A35C /* TopicSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicSectionHeaderView.xib; sourceTree = "<group>"; };
+		E7313AC21CA28D650075A35C /* TopicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableViewController.swift; sourceTree = "<group>"; };
 		E758E8FB1C9D9B0000BDC900 /* MeteorClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorClientManager.swift; sourceTree = "<group>"; };
 		E758E8FF1C9E61D000BDC900 /* Clipo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clipo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E758E9021C9E781D00BDC900 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 				E7AA46A11C9FED3600FDF00E /* ProjectExpandTableViewCell.swift */,
 				E7AA46A31C9FFADC00FDF00E /* ProjectTableViewController.swift */,
 				E7F83C991CA0FC4E0089CCD8 /* FileBrowseViewController.swift */,
+				E7313ABE1CA28B100075A35C /* TopicTableSectionHeader.swift */,
+				E7313AC01CA28B5F0075A35C /* TopicSectionHeaderView.xib */,
+				E7313AC21CA28D650075A35C /* TopicTableViewController.swift */,
 			);
 			path = Clipo;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 				E758E9031C9E781D00BDC900 /* GoogleService-Info.plist in Resources */,
 				E7702A781C9D1EAB00F7C821 /* Assets.xcassets in Resources */,
 				E7702A761C9D1EAB00F7C821 /* Main.storyboard in Resources */,
+				E7313AC11CA28B5F0075A35C /* TopicSectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +247,10 @@
 				E7AA46A21C9FED3600FDF00E /* ProjectExpandTableViewCell.swift in Sources */,
 				E7AA46A01C9FB3F500FDF00E /* NotificationTableViewController.swift in Sources */,
 				E7F83C9A1CA0FC4E0089CCD8 /* FileBrowseViewController.swift in Sources */,
+				E7313AC31CA28D650075A35C /* TopicTableViewController.swift in Sources */,
 				E7702A731C9D1EAB00F7C821 /* ViewController.swift in Sources */,
 				E758E8FC1C9D9B0000BDC900 /* MeteorClientManager.swift in Sources */,
+				E7313ABF1CA28B100075A35C /* TopicTableSectionHeader.swift in Sources */,
 				E7AA469A1C9FAE3600FDF00E /* NotificationPageViewController.swift in Sources */,
 				E7AA46A41C9FFADC00FDF00E /* ProjectTableViewController.swift in Sources */,
 				E7702A711C9D1EAB00F7C821 /* AppDelegate.swift in Sources */,

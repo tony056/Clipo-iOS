@@ -34,11 +34,9 @@ class ProjectTableViewController: UITableViewController {
             CrewMember(name: "Sabine Wren", imageName: "sabine"),
             CrewMember(name: "Zeb Orrelios", imageName: "zeb")
         ]
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let nib = UINib(nibName: "TopicSectionHeaderView", bundle: nil)
+        self.tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "TopicSectionHeaderView")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +48,7 @@ class ProjectTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,6 +93,21 @@ class ProjectTableViewController: UITableViewController {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //        let currSection = self.fetchedResultsController.sections?[section]
+        //        let title = currSection!.name
+        
+        // Dequeue with the reuse identifier
+        let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("TopicSectionHeaderView")
+        let header = cell as! TopicTableSectionHeader
+        header.titleLabel.text = "Haha"
+        
+        return cell
+    }
+
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ua-wH-uDJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YxO-N3-5X6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWu-AA-Dv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3497" y="-572"/>
+            <point key="canvasLocation" x="4118" y="-579"/>
         </scene>
         <!--Notification Page View Controller-->
         <scene sceneID="uZV-Lb-Bkz">
@@ -237,6 +237,9 @@
                                                                 <constraint firstAttribute="height" constant="30" id="igc-84-UfO"/>
                                                             </constraints>
                                                             <state key="normal" title="Files"/>
+                                                            <connections>
+                                                                <segue destination="gH9-aR-Igt" kind="show" id="NEA-wP-b3K"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EF-2g-SiX">
                                                             <rect key="frame" x="150" y="0.0" width="150" height="30"/>
@@ -280,6 +283,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBn-G3-Pfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2760" y="-98"/>
+        </scene>
+        <!--Topic Table View Controller-->
+        <scene sceneID="7Jp-BF-oI2">
+            <objects>
+                <tableViewController id="gH9-aR-Igt" customClass="TopicTableViewController" customModule="Clipo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CO6-wu-1Ae">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCell" id="9vr-my-0TI" customClass="ProjectExpandTableViewCell" customModule="Clipo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9vr-my-0TI" id="L14-mQ-JPl">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-Py-2qC">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-pW-Ptv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                </stackView>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QeX-rK-TJl">
+                                                    <rect key="frame" x="0.0" y="43" width="600" height="0.0"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </tableView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QeX-rK-TJl" firstAttribute="bottom" secondItem="EiT-pW-Ptv" secondAttribute="bottom" id="bUb-Yg-kHx"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="zhQ-Py-2qC" secondAttribute="trailing" id="J0O-go-HdG"/>
+                                        <constraint firstAttribute="bottom" secondItem="zhQ-Py-2qC" secondAttribute="bottom" id="J5f-Xi-wxW"/>
+                                        <constraint firstItem="zhQ-Py-2qC" firstAttribute="leading" secondItem="L14-mQ-JPl" secondAttribute="leading" id="UbI-il-GWu"/>
+                                        <constraint firstItem="zhQ-Py-2qC" firstAttribute="top" secondItem="L14-mQ-JPl" secondAttribute="top" id="oum-lM-XCE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gH9-aR-Igt" id="dr8-zW-Gh2"/>
+                            <outlet property="delegate" destination="gH9-aR-Igt" id="Yvv-mv-2wg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="irb-b0-cUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3434" y="-630"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BHL-vk-xNe">
