@@ -11,13 +11,19 @@
 		E7313ABF1CA28B100075A35C /* TopicTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7313ABE1CA28B100075A35C /* TopicTableSectionHeader.swift */; };
 		E7313AC11CA28B5F0075A35C /* TopicSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7313AC01CA28B5F0075A35C /* TopicSectionHeaderView.xib */; };
 		E7313AC31CA28D650075A35C /* TopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7313AC21CA28D650075A35C /* TopicTableViewController.swift */; };
+		E7472A301CA51BFB00C0E2FD /* MemberTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7472A2F1CA51BFB00C0E2FD /* MemberTypeTableViewController.swift */; };
+		E7472A321CA530A400C0E2FD /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7472A311CA530A400C0E2FD /* ChatRoomViewController.swift */; };
 		E758E8FC1C9D9B0000BDC900 /* MeteorClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E8FB1C9D9B0000BDC900 /* MeteorClientManager.swift */; };
 		E758E9031C9E781D00BDC900 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E758E9021C9E781D00BDC900 /* GoogleService-Info.plist */; };
+		E764AC9A1CA58195003367BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764AC991CA58195003367BA /* LogInViewController.swift */; };
+		E764AC9C1CA59260003367BA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E764AC9B1CA59260003367BA /* SignUpViewController.swift */; };
 		E7702A711C9D1EAB00F7C821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7702A701C9D1EAB00F7C821 /* AppDelegate.swift */; };
 		E7702A731C9D1EAB00F7C821 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7702A721C9D1EAB00F7C821 /* ViewController.swift */; };
 		E7702A761C9D1EAB00F7C821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7702A741C9D1EAB00F7C821 /* Main.storyboard */; };
 		E7702A781C9D1EAB00F7C821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7702A771C9D1EAB00F7C821 /* Assets.xcassets */; };
 		E7702A7B1C9D1EAB00F7C821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7702A791C9D1EAB00F7C821 /* LaunchScreen.storyboard */; };
+		E79C051B1CA4F5C1003099C2 /* MemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C051A1CA4F5C1003099C2 /* MemberTableViewController.swift */; };
+		E79C051D1CA4F5D9003099C2 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C051C1CA4F5D9003099C2 /* MemberTableViewCell.swift */; };
 		E7AA469A1C9FAE3600FDF00E /* NotificationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA46991C9FAE3600FDF00E /* NotificationPageViewController.swift */; };
 		E7AA46A01C9FB3F500FDF00E /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA469F1C9FB3F500FDF00E /* NotificationTableViewController.swift */; };
 		E7AA46A21C9FED3600FDF00E /* ProjectExpandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA46A11C9FED3600FDF00E /* ProjectExpandTableViewCell.swift */; };
@@ -31,9 +37,13 @@
 		E7313ABE1CA28B100075A35C /* TopicTableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableSectionHeader.swift; sourceTree = "<group>"; };
 		E7313AC01CA28B5F0075A35C /* TopicSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicSectionHeaderView.xib; sourceTree = "<group>"; };
 		E7313AC21CA28D650075A35C /* TopicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableViewController.swift; sourceTree = "<group>"; };
+		E7472A2F1CA51BFB00C0E2FD /* MemberTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTypeTableViewController.swift; sourceTree = "<group>"; };
+		E7472A311CA530A400C0E2FD /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		E758E8FB1C9D9B0000BDC900 /* MeteorClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorClientManager.swift; sourceTree = "<group>"; };
 		E758E8FF1C9E61D000BDC900 /* Clipo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clipo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E758E9021C9E781D00BDC900 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E764AC991CA58195003367BA /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		E764AC9B1CA59260003367BA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E7702A6D1C9D1EAB00F7C821 /* Clipo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clipo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7702A701C9D1EAB00F7C821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7702A721C9D1EAB00F7C821 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +51,8 @@
 		E7702A771C9D1EAB00F7C821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7702A7A1C9D1EAB00F7C821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7702A7C1C9D1EAB00F7C821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E79C051A1CA4F5C1003099C2 /* MemberTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableViewController.swift; sourceTree = "<group>"; };
+		E79C051C1CA4F5D9003099C2 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		E7AA46991C9FAE3600FDF00E /* NotificationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPageViewController.swift; sourceTree = "<group>"; };
 		E7AA469F1C9FB3F500FDF00E /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		E7AA46A11C9FED3600FDF00E /* ProjectExpandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectExpandTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +128,12 @@
 				E7313ABE1CA28B100075A35C /* TopicTableSectionHeader.swift */,
 				E7313AC01CA28B5F0075A35C /* TopicSectionHeaderView.xib */,
 				E7313AC21CA28D650075A35C /* TopicTableViewController.swift */,
+				E79C051A1CA4F5C1003099C2 /* MemberTableViewController.swift */,
+				E79C051C1CA4F5D9003099C2 /* MemberTableViewCell.swift */,
+				E7472A2F1CA51BFB00C0E2FD /* MemberTypeTableViewController.swift */,
+				E7472A311CA530A400C0E2FD /* ChatRoomViewController.swift */,
+				E764AC991CA58195003367BA /* LogInViewController.swift */,
+				E764AC9B1CA59260003367BA /* SignUpViewController.swift */,
 			);
 			path = Clipo;
 			sourceTree = "<group>";
@@ -244,12 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7472A301CA51BFB00C0E2FD /* MemberTypeTableViewController.swift in Sources */,
 				E7AA46A21C9FED3600FDF00E /* ProjectExpandTableViewCell.swift in Sources */,
 				E7AA46A01C9FB3F500FDF00E /* NotificationTableViewController.swift in Sources */,
 				E7F83C9A1CA0FC4E0089CCD8 /* FileBrowseViewController.swift in Sources */,
 				E7313AC31CA28D650075A35C /* TopicTableViewController.swift in Sources */,
+				E79C051B1CA4F5C1003099C2 /* MemberTableViewController.swift in Sources */,
 				E7702A731C9D1EAB00F7C821 /* ViewController.swift in Sources */,
+				E7472A321CA530A400C0E2FD /* ChatRoomViewController.swift in Sources */,
+				E764AC9A1CA58195003367BA /* LogInViewController.swift in Sources */,
 				E758E8FC1C9D9B0000BDC900 /* MeteorClientManager.swift in Sources */,
+				E764AC9C1CA59260003367BA /* SignUpViewController.swift in Sources */,
+				E79C051D1CA4F5D9003099C2 /* MemberTableViewCell.swift in Sources */,
 				E7313ABF1CA28B100075A35C /* TopicTableSectionHeader.swift in Sources */,
 				E7AA469A1C9FAE3600FDF00E /* NotificationPageViewController.swift in Sources */,
 				E7AA46A41C9FFADC00FDF00E /* ProjectTableViewController.swift in Sources */,

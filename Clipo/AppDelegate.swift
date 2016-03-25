@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         
         GIDSignIn.sharedInstance().delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection:", name: MeteorClientDidConnectNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection:", name: MeteorClientDidDisconnectNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reportConnection(_:)), name: MeteorClientDidConnectNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reportDisconnection(_:)), name: MeteorClientDidDisconnectNotification, object: nil)
         return true
     }
 
