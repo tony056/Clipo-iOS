@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Material
 
-class MemberTableViewController: UITableViewController {
+class MemberTableViewController: UITableViewController, MemberSelectDelegate, UIPopoverPresentationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +30,31 @@ class MemberTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("memberCell", forIndexPath: indexPath) as! MemberTableViewCell
+        cell.delegate = self
         return cell
     }
-    */
+    
+    func showPopoverController(type: String, sender: RaisedButton) {
+        let contentCV = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("memberTypeSelect") as! MemberTypeTableViewController
+        contentCV.modalPresentationStyle = UIModalPresentationStyle.Popover
+        let popVC = contentCV.popoverPresentationController
+        contentCV.popoverPresentationController?.sourceRect = sender.frame
+        contentCV.popoverPresentationController?.sourceView = self.view
+        popVC?.permittedArrowDirections = UIPopoverArrowDirection.Up
+        popVC?.delegate = self
+        self.presentViewController(contentCV, animated: true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.
