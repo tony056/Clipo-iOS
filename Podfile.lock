@@ -25,18 +25,22 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
+  - JSQMessagesViewController (7.2.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - M13OrderedDictionary (1.1.0)
+  - Material (1.37.3)
   - ObjectiveDDP (0.2.0):
     - M13OrderedDictionary
     - SocketRocket (= 0.4.1)
-  - RATreeView (2.1.0)
   - SocketRocket (0.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - Google/SignIn
+  - JSQMessagesViewController
+  - Material (~> 1.0)
   - ObjectiveDDP (from `git@github.com:boundsj/ObjectiveDDP.git`, branch `master`)
-  - RATreeView (~> 2.1.0)
 
 EXTERNAL SOURCES:
   ObjectiveDDP:
@@ -58,9 +62,11 @@ SPEC CHECKSUMS:
   GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   M13OrderedDictionary: 6e157fe9c82aa6b3cd7198f5c5c30c7a6834c4a6
+  Material: e191133dd6e34f55fe8b25795ecfc7d4e8359417
   ObjectiveDDP: c2225f6896d671977b7046afc0530967cd141f90
-  RATreeView: fc82ec26b8be18cfa0f5f99a5abbe6be68edb21f
   SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
 
 COCOAPODS: 0.39.0
