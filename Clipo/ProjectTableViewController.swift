@@ -20,9 +20,10 @@ struct CrewMember {
     }
 }
 
-class ProjectTableViewController: UITableViewController {
+class ProjectTableViewController: UITableViewController, SectionHeaderViewDelegate {
     var crewMembers = [CrewMember]()
-    
+    var sectionIndex = [Bool](count: 2, repeatedValue: false)
+    var hideSection = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100
@@ -36,6 +37,7 @@ class ProjectTableViewController: UITableViewController {
         ]
         let nib = UINib(nibName: "TopicSectionHeaderView", bundle: nil)
         self.tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "TopicSectionHeaderView")
+//        self.tableView.tableFooterView = UIView()
         
     }
 
@@ -53,6 +55,10 @@ class ProjectTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if self.sectionIndex[section] {
+            return 0
+        }
+        
         return self.crewMembers.count
     }
 
@@ -95,17 +101,24 @@ class ProjectTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //        let currSection = self.fetchedResultsController.sections?[section]
-        //        let title = currSection!.name
-        
-        // Dequeue with the reuse identifier
         let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("TopicSectionHeaderView")
         let header = cell as! TopicTableSectionHeader
-        header.titleLabel.text = "Haha"
-        
+        header.titleLabel.text = "Section \(section)"
+        header.sectionNum = section
+        header.delegate = self
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60.0
+    }
+    
+    func sectionHeaderView(sectionHeaderView: TopicTableSectionHeader, expandable: Bool) {
+        print("section header")
+        self.sectionIndex[sectionHeaderView.sectionNum] = expandable
+        self.tableView.reloadData()
+    
+    }
     
     
 
