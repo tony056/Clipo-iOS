@@ -194,9 +194,6 @@
                                             <state key="normal" title="Button"/>
                                             <connections>
                                                 <action selector="selectMemberType:" destination="CKJ-Xh-OK6" eventType="touchUpInside" id="Jcm-qP-exl"/>
-                                                <segue destination="wUW-lQ-10Z" kind="popoverPresentation" popoverAnchorView="02r-VC-Fus" id="Svc-p5-50N">
-                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                </segue>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -562,12 +559,15 @@
         <!--Item 1-->
         <scene sceneID="1HI-Py-nSW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUB-xW-hLt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUB-xW-hLt" customClass="CPNavigationController" customModule="Clipo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="lu7-oY-YjD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1J3-r3-HVP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1J3-r3-HVP" customClass="NavigationBar" customModule="Material">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="backButtonImage" value="bubble_regular.png"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -616,10 +616,10 @@
             </objects>
             <point key="canvasLocation" x="1945" y="1329"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="ySS-3N-hSZ">
             <objects>
-                <viewController id="H60-3u-etq" sceneMemberID="viewController">
+                <viewController id="H60-3u-etq" customClass="SignUpViewController" customModule="Clipo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zEA-RZ-eWk"/>
                         <viewControllerLayoutGuide type="bottom" id="uJc-6L-scc"/>
@@ -628,44 +628,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-9j-4D2" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="60" y="93" width="480" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="J0u-iW-vYC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ta0-pN-kck" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="60" y="185" width="480" height="50"/>
+                                <rect key="frame" x="60" y="215" width="480" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gpe-oL-RTS"/>
+                                    <constraint firstAttribute="height" constant="30" id="gpe-oL-RTS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgN-6a-cVf" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="60.5" y="275" width="480" height="50"/>
+                                <rect key="frame" x="60.5" y="285" width="480" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DzV-pQ-ZNV"/>
+                                    <constraint firstAttribute="height" constant="30" id="DzV-pQ-ZNV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-2k-zxR" customClass="FlatButton" customModule="Material">
-                                <rect key="frame" x="60.5" y="447" width="479.5" height="50"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Uqw-hU-7yb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUk-qx-vJO" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="60" y="369" width="480" height="50"/>
                                 <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-2k-zxR" customClass="FlatButton" customModule="Material">
+                                <rect key="frame" x="60" y="447" width="479.5" height="50"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="eEf-fM-edP" kind="show" id="rAa-RG-gEz"/>
+                                    <segue destination="eEf-fM-edP" kind="show" id="xey-sY-xFL"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-9j-4D2" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="60" y="143" width="480" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J0u-iW-vYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -686,10 +683,20 @@
                             <constraint firstItem="XgN-6a-cVf" firstAttribute="centerX" secondItem="KgT-0y-hTW" secondAttribute="centerX" id="ug2-qZ-XIy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="pfU-2k-zxR" id="1Ys-av-yky"/>
+                        <outlet property="emailTextField" destination="BZe-9j-4D2" id="ErK-Ap-def"/>
+                        <outlet property="passwordTextField" destination="XgN-6a-cVf" id="Esc-wC-qy4"/>
+                        <outlet property="signUpBtn" destination="AUk-qx-vJO" id="vON-ra-ngu"/>
+                        <outlet property="userNameTextField" destination="ta0-pN-kck" id="a8m-oS-lkd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vf-lF-lcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="1050"/>
+            <point key="canvasLocation" x="442" y="900"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bubble_regular.png" width="56" height="35"/>
+    </resources>
 </document>
