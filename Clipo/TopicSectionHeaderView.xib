@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,45 +15,50 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccw-PQ-Fbb">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tjz-J7-jCU">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tjz-J7-jCU">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nQ-pq-lbv">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hct-FV-9MT">
-                                    <rect key="frame" x="286" y="0.0" width="314" height="600"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                    <state key="normal" title="Expand"/>
+                                    <connections>
+                                        <action selector="expandButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="AOY-bs-HUa"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="0nQ-pq-lbv" firstAttribute="top" secondItem="tjz-J7-jCU" secondAttribute="top" id="UHI-VE-ZZl"/>
-                                <constraint firstItem="0nQ-pq-lbv" firstAttribute="leading" secondItem="tjz-J7-jCU" secondAttribute="leading" id="xP0-nK-vH3"/>
+                                <constraint firstItem="hct-FV-9MT" firstAttribute="width" secondItem="tjz-J7-jCU" secondAttribute="width" multiplier="0.5" id="17S-rh-4q2"/>
+                                <constraint firstAttribute="bottom" secondItem="hct-FV-9MT" secondAttribute="bottom" id="Cxs-NC-Dzj"/>
+                                <constraint firstAttribute="trailing" secondItem="hct-FV-9MT" secondAttribute="trailing" id="hMl-Zy-auV"/>
+                                <constraint firstItem="hct-FV-9MT" firstAttribute="top" secondItem="tjz-J7-jCU" secondAttribute="top" id="rc4-qo-bip"/>
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="tjz-J7-jCU" secondAttribute="bottom" id="Eds-hd-O7z"/>
-                        <constraint firstAttribute="trailing" secondItem="tjz-J7-jCU" secondAttribute="trailing" id="J0a-Eo-GdE"/>
-                        <constraint firstItem="tjz-J7-jCU" firstAttribute="leading" secondItem="Ccw-PQ-Fbb" secondAttribute="leading" id="X8T-hr-VCQ"/>
-                        <constraint firstItem="tjz-J7-jCU" firstAttribute="top" secondItem="Ccw-PQ-Fbb" secondAttribute="top" id="yoF-Og-GoB"/>
+                        <constraint firstAttribute="trailing" secondItem="tjz-J7-jCU" secondAttribute="trailing" id="EbT-dR-y1b"/>
+                        <constraint firstItem="tjz-J7-jCU" firstAttribute="leading" secondItem="Ccw-PQ-Fbb" secondAttribute="leading" id="LUK-rA-uMX"/>
+                        <constraint firstItem="tjz-J7-jCU" firstAttribute="top" secondItem="Ccw-PQ-Fbb" secondAttribute="top" id="hsj-5Z-K2O"/>
+                        <constraint firstAttribute="bottom" secondItem="tjz-J7-jCU" secondAttribute="bottom" id="rmU-Bq-oqw"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="Ccw-PQ-Fbb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KEo-YE-Doa"/>
-                <constraint firstItem="Ccw-PQ-Fbb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QIT-Hq-Q7o"/>
-                <constraint firstAttribute="trailing" secondItem="Ccw-PQ-Fbb" secondAttribute="trailing" id="UOL-FI-IIQ"/>
-                <constraint firstAttribute="bottom" secondItem="Ccw-PQ-Fbb" secondAttribute="bottom" id="mvy-qk-srv"/>
+                <constraint firstAttribute="bottom" secondItem="Ccw-PQ-Fbb" secondAttribute="bottom" id="0Hv-I8-5mi"/>
+                <constraint firstItem="Ccw-PQ-Fbb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5zy-iB-qdL"/>
+                <constraint firstAttribute="trailing" secondItem="Ccw-PQ-Fbb" secondAttribute="trailing" id="CYs-x7-06A"/>
+                <constraint firstItem="Ccw-PQ-Fbb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qhO-tO-YbN"/>
             </constraints>
             <connections>
                 <outlet property="sectionButton" destination="hct-FV-9MT" id="Ozz-Kf-ylX"/>
                 <outlet property="titleLabel" destination="0nQ-pq-lbv" id="VdV-k8-kit"/>
             </connections>
+            <point key="canvasLocation" x="309" y="354"/>
         </view>
     </objects>
 </document>

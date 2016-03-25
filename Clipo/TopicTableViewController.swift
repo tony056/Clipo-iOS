@@ -17,13 +17,7 @@ class TopicTableViewController: UITableViewController {
         super.viewDidLoad()
         let nib = UINib(nibName: "TopicSectionHeaderView", bundle: nil)
         self.tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "TopicSectionHeaderView")
-        crewMembers = [
-            CrewMember(name: "Ezra Bridger", imageName: "ezra"),
-            CrewMember(name: "Kanan Jarrus", imageName: "kanan"),
-            CrewMember(name: "Hera Syndulla", imageName: "hera"),
-            CrewMember(name: "Sabine Wren", imageName: "sabine"),
-            CrewMember(name: "Zeb Orrelios", imageName: "zeb")
-        ]
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,10 +38,6 @@ class TopicTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let currSection = self.fetchedResultsController.sections?[section]
-//        let title = currSection!.name
-        
-        // Dequeue with the reuse identifier
         let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("TopicSectionHeaderView")
         let header = cell as! TopicTableSectionHeader
         header.titleLabel.text = "Haha"
