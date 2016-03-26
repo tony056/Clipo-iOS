@@ -22,10 +22,11 @@ class MemberTableViewCell: UITableViewCell {
     
     @IBAction func deleteMember(sender: FlatButton) {
     }
-    @IBAction func selectMemberType(sender: RaisedButton) {
+    @IBAction func selectMemberType(sender: UITableViewCell) {
         self.delegate?.showPopoverController(self.selectBtn.currentTitle!, sender: self.selectBtn)
     }
     var delegate : MemberSelectDelegate?
+    var row : Int?
     override func awakeFromNib() {
         super.awakeFromNib()
 //        self.deleteBtn = MKButton(type:)

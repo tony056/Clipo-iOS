@@ -42,6 +42,7 @@ class MemberTableViewController: UITableViewController, MemberSelectDelegate, UI
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("memberCell", forIndexPath: indexPath) as! MemberTableViewCell
         cell.delegate = self
+        cell.row = indexPath.row
         return cell
     }
     
@@ -54,6 +55,7 @@ class MemberTableViewController: UITableViewController, MemberSelectDelegate, UI
         popVC?.permittedArrowDirections = UIPopoverArrowDirection.Up
         popVC?.delegate = self
         self.presentViewController(contentCV, animated: true, completion: nil)
+//        self.performSegueWithIdentifier("showTypeSelectView", sender: self)
     }
 
     /*
@@ -91,14 +93,23 @@ class MemberTableViewController: UITableViewController, MemberSelectDelegate, UI
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showTypeSelectView" {
+//            let vc = segue.destinationViewController
+//            let controller = vc.popoverPresentationController
+//            if controller != nil {
+//                controller?.delegate = self
+//            }
+//        }
+//    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
     }
-    */
+    
 
 }
