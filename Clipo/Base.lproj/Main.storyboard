@@ -6,6 +6,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Log In View Controller-->
@@ -354,7 +355,7 @@
             </objects>
             <point key="canvasLocation" x="3697" y="2621"/>
         </scene>
-        <!--Project Table View Controller-->
+        <!--Projects-->
         <scene sceneID="Vuw-cH-Qv9">
             <objects>
                 <tableViewController id="YxO-N3-5X6" customClass="ProjectTableViewController" customModule="Clipo" customModuleProvider="target" sceneMemberID="viewController">
@@ -456,7 +457,16 @@
                             <outlet property="delegate" destination="YxO-N3-5X6" id="9M2-RX-97u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OFG-nu-zPN"/>
+                    <navigationItem key="navigationItem" title="Projects" id="OFG-nu-zPN">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="Kv5-EB-9Ec"/>
+                            <barButtonItem systemItem="add" id="bXx-hP-jK6">
+                                <connections>
+                                    <action selector="addNewProject:" destination="YxO-N3-5X6" id="i6B-Q9-D1X"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBn-G3-Pfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -559,7 +569,7 @@
         <!--Item 1-->
         <scene sceneID="1HI-Py-nSW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUB-xW-hLt" customClass="CPNavigationController" customModule="Clipo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUB-xW-hLt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="lu7-oY-YjD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1J3-r3-HVP" customClass="NavigationBar" customModule="Material">

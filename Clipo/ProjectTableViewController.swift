@@ -25,9 +25,36 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
     var crewMembers = [CrewMember]()
     var sectionIndex = [Bool](count: 2, repeatedValue: false)
     var hideSection = -1
+    func alertControllerTextFieldHandler(textField: UITextField) -> Void {
+        print("generating text field")
+        textField.placeholder = "Enter Project Name"
+        
+    }
+    
+    func handleCancel(cancelAction: UIAlertAction!){
+        print("cancel btn")
+    }
+    
+    func handleAdd(addAction: UIAlertAction!){
+        print("add btn")
+    }
+    
+    @IBAction func addNewProject(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Add New Project", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addTextFieldWithConfigurationHandler(alertControllerTextFieldHandler)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: handleCancel))
+        alertController.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: handleAdd))
+        self.presentViewController(alertController, animated: true) {
+            print("completion ok")
+        }
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setupToolbar()
+       self.setupToolbar()
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         crewMembers = [
@@ -123,50 +150,8 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
     }
     
     func setupToolbar(){
-        // Title label.
-        let titleLabel: UILabel = UILabel()
-        titleLabel.text = "Material"
-        titleLabel.textAlignment = .Left
-        titleLabel.textColor = MaterialColor.white
-        
-        // Detail label.
-        let detailLabel: UILabel = UILabel()
-        detailLabel.text = "Build Beautiful Software"
-        detailLabel.textAlignment = .Left
-        detailLabel.textColor = MaterialColor.white
-        
-        var image: UIImage? = MaterialIcon.menu
-        
-        // Menu button.
-        let menuButton: FlatButton = FlatButton()
-        menuButton.pulseColor = MaterialColor.white
-        menuButton.pulseScale = false
-        menuButton.tintColor = MaterialColor.white
-        menuButton.setImage(image, forState: .Normal)
-        menuButton.setImage(image, forState: .Highlighted)
-        
-        // Switch control.
-        let switchControl: MaterialSwitch = MaterialSwitch(state: .Off, style: .LightContent, size: .Small)
-        
-        // Search button.
-        image = MaterialIcon.search
-        let searchButton: FlatButton = FlatButton()
-        searchButton.pulseColor = MaterialColor.white
-        searchButton.pulseScale = false
-        searchButton.tintColor = MaterialColor.white
-        searchButton.setImage(image, forState: .Normal)
-        searchButton.setImage(image, forState: .Highlighted)
-        
-        let toolbar: Toolbar = Toolbar()
-        toolbar.statusBarStyle = .LightContent
-        toolbar.backgroundColor = MaterialColor.blue.base
-        toolbar.titleLabel = titleLabel
-        toolbar.detailLabel = detailLabel
-        toolbar.leftControls = [menuButton]
-        toolbar.rightControls = [switchControl, searchButton]
-        
-        view.addSubview(toolbar)
-
+        self.navigationController?.navigationBar.barTintColor = MaterialColor.red.base
+        self.navigationController?.navigationBar.tintColor = MaterialColor.white
     }
     
     
