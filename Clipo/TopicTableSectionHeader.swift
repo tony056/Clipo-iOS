@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 protocol SectionHeaderViewDelegate {
     func sectionHeaderView(sectionHeaderView: TopicTableSectionHeader, expandable: Bool)
@@ -32,6 +33,7 @@ class TopicTableSectionHeader: UITableViewHeaderFooterView {
     override func drawRect(rect: CGRect) {
         // Drawing code
         super.drawRect(rect)
+//        self.backgroundColor = MaterialColor.grey.base
     }
     
 

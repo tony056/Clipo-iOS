@@ -33,8 +33,10 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="hct-FV-9MT" firstAttribute="width" secondItem="tjz-J7-jCU" secondAttribute="width" multiplier="0.5" id="17S-rh-4q2"/>
+                                <constraint firstItem="hct-FV-9MT" firstAttribute="width" secondItem="tjz-J7-jCU" secondAttribute="width" multiplier="0.25" id="17S-rh-4q2"/>
                                 <constraint firstAttribute="bottom" secondItem="hct-FV-9MT" secondAttribute="bottom" id="Cxs-NC-Dzj"/>
+                                <constraint firstItem="0nQ-pq-lbv" firstAttribute="height" secondItem="tjz-J7-jCU" secondAttribute="height" id="Nu3-Fu-C3e"/>
+                                <constraint firstItem="hct-FV-9MT" firstAttribute="height" secondItem="tjz-J7-jCU" secondAttribute="height" id="T7q-fe-AkY"/>
                                 <constraint firstAttribute="trailing" secondItem="hct-FV-9MT" secondAttribute="trailing" id="hMl-Zy-auV"/>
                                 <constraint firstItem="hct-FV-9MT" firstAttribute="top" secondItem="tjz-J7-jCU" secondAttribute="top" id="rc4-qo-bip"/>
                             </constraints>
