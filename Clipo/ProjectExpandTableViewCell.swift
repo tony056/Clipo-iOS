@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 class ProjectExpandTableViewCell: UITableViewCell {
     var crewMember: CrewMember? { didSet { if let cm = crewMember { configureForCrewMember(cm) } } }
@@ -24,6 +25,7 @@ class ProjectExpandTableViewCell: UITableViewCell {
         super.awakeFromNib()
         toolbarStackViewHeightConstraint.constant = 0.0
         toolbarStackView.hidden = true
+        roundImageView(self.projectImageView)
     }
     
     func configureForCrewMember(member: CrewMember) {
@@ -51,6 +53,14 @@ class ProjectExpandTableViewCell: UITableViewCell {
             }, completion: { completed in
                 self.toolbarStackView.hidden = !selected
         })
+    }
+    
+    func roundImageView(target: UIImageView){
+        target.layer.cornerRadius = 10.0
+        target.clipsToBounds = true
+        
+        target.layer.borderWidth = 3.0
+        target.layer.borderColor = MaterialColor.grey.darken3.CGColor
     }
 
 }

@@ -22,6 +22,9 @@ struct CrewMember {
 }
 
 class ProjectTableViewController: UITableViewController, SectionHeaderViewDelegate {
+    
+    
+    
     var crewMembers = [CrewMember]()
     var sectionIndex = [Bool](count: 2, repeatedValue: false)
     var hideSection = -1
@@ -130,11 +133,11 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("TopicSectionHeaderView")
-        let header = cell as! TopicTableSectionHeader
-        header.titleLabel.text = "Section \(section)"
-        header.sectionNum = section
-        header.delegate = self
+        let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("TopicSectionHeaderView") as! TopicTableSectionHeader
+        cell.titleLabel.text = "Section \(section)"
+        cell.sectionNum = section
+        cell.delegate = self
+//        cell.contentView.backgroundColor = MaterialColor.grey.base
         return cell
     }
     
