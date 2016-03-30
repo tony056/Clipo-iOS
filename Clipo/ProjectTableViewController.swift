@@ -21,10 +21,11 @@ struct CrewMember {
     }
 }
 
-class ProjectTableViewController: UITableViewController, SectionHeaderViewDelegate {
+class ProjectTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SectionHeaderViewDelegate {
     
     
     
+    @IBOutlet weak var tableView: UITableView!
     var crewMembers = [CrewMember]()
     var sectionIndex = [Bool](count: 2, repeatedValue: false)
     var hideSection = -1
@@ -54,7 +55,7 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
     }
     
     private var addMenu : Menu!
-    
+    private lazy var menuView: MenuView = MenuView()
     
     
     override func viewDidLoad() {
@@ -83,12 +84,12 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if self.sectionIndex[section] {
             return 0
@@ -98,7 +99,7 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("projectCell", forIndexPath: indexPath) as! ProjectExpandTableViewCell
         
         cell.crewMember = crewMembers[indexPath.row]
@@ -106,7 +107,7 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
         return cell
     }
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         var indexPathToReturn: NSIndexPath?
         var crewMember = crewMembers[indexPath.row]
         
@@ -125,17 +126,17 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
         return indexPathToReturn
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("TopicSectionHeaderView") as! TopicTableSectionHeader
         cell.titleLabel.text = "Section \(section)"
         cell.sectionNum = section
@@ -144,7 +145,7 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60.0
     }
     
@@ -167,28 +168,29 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
         addBtn.setImage(image, forState: .Normal)
         addBtn.setImage(image, forState: .Highlighted)
         addBtn.addTarget(self, action: #selector(handleMenu), forControlEvents: .TouchUpInside)
-        self.view.addSubview(addBtn)
+        menuView.addSubview(addBtn)
         
         image = MaterialIcon.menu
         let noteBtn: FabButton = FabButton()
         noteBtn.backgroundColor = MaterialColor.blue.base
         noteBtn.setImage(image, forState: .Normal)
         noteBtn.setImage(image, forState: .Highlighted)
-        self.view.addSubview(noteBtn)
+        menuView.addSubview(noteBtn)
         
         image = UIImage(named: "ic_photo_camera_white")
         let photoBtn: FabButton = FabButton()
         photoBtn.setImage(image, forState: .Normal)
         photoBtn.setImage(image, forState: .Highlighted)
-        self.view.addSubview(photoBtn)
+        menuView.addSubview(photoBtn)
         
-        self.addMenu = Menu(origin: CGPointMake(UIScreen.mainScreen().bounds.size.width - 56 - 16, UIScreen.mainScreen().bounds.size.height - 56 - 16))
-        self.addMenu.direction = .Up
-        self.addMenu.baseViewSize = CGSizeMake(56, 56)
-        self.addMenu.views = [addBtn, noteBtn, photoBtn]
-        for btn in self.addMenu.views! {
-            self.view.bringSubviewToFront(btn)
-        }
+//        self.addMenu = Menu(origin: CGPointMake(UIScreen.mainScreen().bounds.size.width - 56 - 16, UIScreen.mainScreen().bounds.size.height - 56 - 16))
+        menuView.menu.direction = .Up
+        menuView.menu.baseViewSize = CGSizeMake(56, 56)
+        menuView.menu.views = [addBtn, noteBtn, photoBtn]
+        view.addSubview(menuView)
+        menuView.translatesAutoresizingMaskIntoConstraints = false
+        MaterialLayout.size(view, child: menuView, width: 56, height: 56)
+        MaterialLayout.alignFromBottomRight(view, child: menuView, bottom: 40, right: 16)
     }
     
     func handleMenu(){
