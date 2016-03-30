@@ -53,6 +53,8 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
         
     }
     
+    private var addMenu : Menu!
+    
     
     
     override func viewDidLoad() {
@@ -70,6 +72,7 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
         let nib = UINib(nibName: "TopicSectionHeaderView", bundle: nil)
         self.tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "TopicSectionHeaderView")
 //        self.tableView.tableFooterView = UIView()
+        prepareForMenu()
         
     }
 
@@ -155,6 +158,57 @@ class ProjectTableViewController: UITableViewController, SectionHeaderViewDelega
     func setupToolbar(){
         self.navigationController?.navigationBar.barTintColor = MaterialColor.red.base
         self.navigationController?.navigationBar.tintColor = MaterialColor.white
+    }
+    
+    func prepareForMenu(){
+        var image: UIImage? = MaterialIcon.add
+        let addBtn: FabButton = FabButton()
+        addBtn.pulseColor = nil
+        addBtn.setImage(image, forState: .Normal)
+        addBtn.setImage(image, forState: .Highlighted)
+        addBtn.addTarget(self, action: #selector(handleMenu), forControlEvents: .TouchUpInside)
+        self.view.addSubview(addBtn)
+        
+        image = MaterialIcon.menu
+        let noteBtn: FabButton = FabButton()
+        noteBtn.backgroundColor = MaterialColor.blue.base
+        noteBtn.setImage(image, forState: .Normal)
+        noteBtn.setImage(image, forState: .Highlighted)
+        self.view.addSubview(noteBtn)
+        
+        image = UIImage(named: "ic_photo_camera_white")
+        let photoBtn: FabButton = FabButton()
+        photoBtn.setImage(image, forState: .Normal)
+        photoBtn.setImage(image, forState: .Highlighted)
+        self.view.addSubview(photoBtn)
+        
+        self.addMenu = Menu(origin: CGPointMake(UIScreen.mainScreen().bounds.size.width - 56 - 16, UIScreen.mainScreen().bounds.size.height - 56 - 16))
+        self.addMenu.direction = .Up
+        self.addMenu.baseViewSize = CGSizeMake(56, 56)
+        self.addMenu.views = [addBtn, noteBtn, photoBtn]
+        for btn in self.addMenu.views! {
+            self.view.bringSubviewToFront(btn)
+        }
+    }
+    
+    func handleMenu(){
+        let image: UIImage?
+        
+        if self.addMenu.opened {
+            self.addMenu.close()
+            image = MaterialIcon.add
+        } else {
+            self.addMenu.open() { (v: UIView) in
+                (v as? MaterialButton)?.pulse()
+            }
+            image = MaterialIcon.close
+        }
+        
+        // Add a nice rotation animation to the base button.
+        let first: MaterialButton? = self.addMenu.views?.first as? MaterialButton
+        first?.animate(MaterialAnimation.rotate(rotation: 1))
+        first?.setImage(image, forState: .Normal)
+        first?.setImage(image, forState: .Highlighted)
     }
     
     
